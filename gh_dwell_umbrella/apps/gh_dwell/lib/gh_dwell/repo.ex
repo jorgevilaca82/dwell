@@ -1,5 +1,5 @@
 defmodule Dwell.Repo do
   use Ecto.Repo,
-    otp_app: :gh_dwell,
+    otp_app: :dwell,
     adapter: Ecto.Adapters.Postgres
 end

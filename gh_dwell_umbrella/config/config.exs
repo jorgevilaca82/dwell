@@ -10,7 +10,7 @@
 import Config
 
 # Configure Mix tasks and generators
-config :gh_dwell,
+config :dwell,
   namespace: Dwell,
   ecto_repos: [Dwell.Repo]
 
@@ -21,15 +21,15 @@ config :gh_dwell,
 #
 # For production it's recommended to configure a different adapter
 # at the `config/runtime.exs`.
-config :gh_dwell, Dwell.Mailer, adapter: Swoosh.Adapters.Local
+config :dwell, Dwell.Mailer, adapter: Swoosh.Adapters.Local
 
-config :gh_dwell_web,
+config :dwell_web,
   namespace: DwellWeb,
   ecto_repos: [Dwell.Repo],
-  generators: [context_app: :gh_dwell]
+  generators: [context_app: :dwell]
 
 # Configures the endpoint
-config :gh_dwell_web, DwellWeb.Endpoint,
+config :dwell_web, DwellWeb.Endpoint,
   url: [host: "localhost"],
   render_errors: [
     formats: [html: DwellWeb.ErrorHTML, json: DwellWeb.ErrorJSON],
@@ -44,7 +44,7 @@ config :esbuild,
   default: [
     args:
       ~w(js/app.js --bundle --target=es2017 --outdir=../priv/static/assets --external:/fonts/* --external:/images/*),
-    cd: Path.expand("../apps/gh_dwell_web/assets", __DIR__),
+    cd: Path.expand("../apps/dwell_web/assets", __DIR__),
     env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
   ]
 
@@ -57,7 +57,7 @@ config :tailwind,
       --input=css/app.css
       --output=../priv/static/assets/app.css
     ),
-    cd: Path.expand("../apps/gh_dwell_web/assets", __DIR__)
+    cd: Path.expand("../apps/dwell_web/assets", __DIR__)
   ]
 
 # Configures Elixir's Logger

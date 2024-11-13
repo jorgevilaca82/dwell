@@ -3,7 +3,7 @@ defmodule DwellWeb.MixProject do
 
   def project do
     [
-      app: :gh_dwell_web,
+      app: :dwell_web,
       version: "0.1.0",
       build_path: "../../_build",
       config_path: "../../config/config.exs",
@@ -48,7 +48,7 @@ defmodule DwellWeb.MixProject do
       {:telemetry_metrics, "~> 0.6"},
       {:telemetry_poller, "~> 1.0"},
       {:gettext, "~> 0.20"},
-      {:gh_dwell, in_umbrella: true},
+      {:dwell, in_umbrella: true},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"}
     ]

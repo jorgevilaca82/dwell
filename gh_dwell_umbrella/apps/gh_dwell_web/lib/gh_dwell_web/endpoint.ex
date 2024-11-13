@@ -1,12 +1,12 @@
 defmodule DwellWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :gh_dwell_web
+  use Phoenix.Endpoint, otp_app: :dwell_web
 
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
   # Set :encryption_salt if you would also like to encrypt it.
   @session_options [
     store: :cookie,
-    key: "_gh_dwell_web_key",
+    key: "_dwell_web_key",
     signing_salt: "TkkHs8IJ",
     same_site: "Lax"
   ]
@@ -19,7 +19,7 @@ defmodule DwellWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :gh_dwell_web,
+    from: :dwell_web,
     gzip: false,
     only: DwellWeb.static_paths()
 
@@ -29,7 +29,7 @@ defmodule DwellWeb.Endpoint do
     socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
     plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
-    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :gh_dwell_web
+    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :dwell_web
   end
 
   plug Phoenix.LiveDashboard.RequestLogger,
